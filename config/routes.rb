@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  #this directs signed in users to their dashboard. This is Clearance functionality.
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: "dashboards#show"
+  end
+
   root 'home#show'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
