@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   root 'home#show'
   
-  resources :clucks, only: [:create]
+  resources :clucks, only: [:create, :show]
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
   
-  resources :users, only: [:create] do
+  resources :users, only: [:create, :show] do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]

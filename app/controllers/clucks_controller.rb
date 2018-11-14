@@ -6,6 +6,10 @@ class ClucksController < ApplicationController
     redirect_to root_path, redirect_options_for(cluck)
   end
 
+  def show
+    @cluck = Cluck.find(params[:id])
+  end
+
 
   private
 
