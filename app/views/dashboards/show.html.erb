@@ -1,1 +1,13 @@
 <h1>Dashboard</h1>
+
+<%= form_for @cluck do |form| %>
+  <%= form.text_field :body, placeholder: "Cluck here", required: true %>
+  <%= form.submit "Cluck!" %>
+<% end %>
+
+
+<% @clucks.each do |cluck| %>
+ <div class="">
+   <%= cluck.body %>
+ </div>
+<% end %>
