@@ -10,17 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181113145700) do
+ActiveRecord::Schema.define(version: 20181115154730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clucks", force: :cascade do |t|
-    t.string "body", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "content_type"
+    t.integer "content_id"
+    t.index ["content_type", "content_id"], name: "index_clucks_on_content_type_and_content_id"
     t.index ["user_id"], name: "index_clucks_on_user_id"
+  end
+
+  create_table "textclucks", force: :cascade do |t|
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

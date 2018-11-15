@@ -1,0 +1,2 @@
+class Textcluck < ApplicationRecord
+end
