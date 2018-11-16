@@ -1,7 +1,7 @@
  <div class="">
    <!--- was cluck.user.username but new method in model to trim this -->
    <%= link_to cluck.username, cluck.user %>
-   <%= cluck.body %>
+   <%= cluck.content.body %>
    <%= link_to cluck do %>
      <%= time_ago_in_words cluck.created_at%> ago
    <% end %>
